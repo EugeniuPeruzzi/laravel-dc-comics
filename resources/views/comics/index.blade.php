@@ -6,7 +6,8 @@
             <div class="col d-flex flex-wrap m-4">
                 @foreach ($comics as $item)
                     <div class="card m-4" style="width: 18rem;">
-                        <img src="{{ $item->thumb }}" class="card-img-top" alt="...">
+                        <a href="{{ Route('comics.show', $item->id) }}"><img src="{{ $item->thumb }}" class="card-img-top"
+                                alt="..."></a>
                         <h5 class="card-title">{{ $item->title }}</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">{{ $item->price }}</li>
