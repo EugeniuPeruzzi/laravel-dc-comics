@@ -99,6 +99,51 @@ class ComicController extends Controller
         return redirect()->route('comics.show', $comic->id);
     }
 
+    // VALIDATOR !!
+    private function validation($data)
+    {
+        $validator = Validator::make($data,
+        
+            [
+                'title' => 'required | max:50',
+                'description' => 'required',
+                'thumb' => 'required',
+                'cover_image' => 'required',
+                'thumb2' => 'required',
+                'price' => 'required | max:10',
+                'series' => 'required | max:20',
+                'sale_date' => 'required | max:10',
+                'type' => 'required | max:20',
+                'artists' => 'required',
+                'writers' => 'required',
+            ],
+
+            [
+                'title.required' => 'Title is required',
+                'title.max' => 'Il titolo deve avere una lunghezza massima di :max caratteri',
+                'description.required' => 'Description is required',
+                'thumb.required' => 'Thumb is required',
+                'cover_image.required' => 'Cover is required',
+                'thumb2.required' => 'Second thumg is required',
+                'price.required' => 'Price is required',
+                'price.max' => 'Price requires :max characters',
+                'series.required' => 'Series is required',
+                'series.max' => 'Series requires :max charachteras',
+                'sale_date.required' => 'Date is required',
+                'sale_date.max' => 'Sale date requires :max charachters',
+                'type.required' => 'Type is required',
+                'type.max' => 'Type requires :max characters',
+                'artists.required' => 'Artist are required',
+                'writers.required' => 'Writers are required',
+            ]
+        
+        )->validate();
+
+        return $validator;
+    }
+
+
+
     /**
      * Remove the specified resource from storage.
      *

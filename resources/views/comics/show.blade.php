@@ -30,6 +30,7 @@
                 <div class="description mt-3">
                     <p>{{ $comic->description }}</p>
                 </div>
+                <a href="{{ Route('comics.index') }}" class="btn btn-success">Back</a>
             </div>
         </div>
     </div>

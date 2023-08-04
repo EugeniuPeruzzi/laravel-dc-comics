@@ -6,7 +6,7 @@
             <div class="col-12 text-center">
                 <div class="d-flex justify-content-between align-items-center">
                     <h2 class="fw-bold">Aggiungi un Nuovo Comic</h2>
-                    <a href="{{ Route('comics.index') }}" class="btn btn-dark">Homepage</a>
+                    <a href="{{ Route('comics.index') }}" class="btn btn-danger">Back</a>
                 </div>
             </div>
             <div class="col-12 my-5">
