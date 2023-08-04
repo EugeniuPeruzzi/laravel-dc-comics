@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 // alerady imported file
 use App\Models\Comic;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -80,7 +80,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -92,7 +92,11 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $this->validation($request->all());
+
+        $comic->update($form_data);
+
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**

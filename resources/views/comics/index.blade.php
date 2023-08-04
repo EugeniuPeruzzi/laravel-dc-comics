@@ -16,6 +16,8 @@
                             <li class="list-group-item">{{ $item->price }}</li>
                             <li class="list-group-item">{{ $item->series }}</li>
                             <li class="list-group-item">{{ $item->sale_date }}</li>
+                            <li class="list-group-item"><a href="{{ Route('comics.edit', $item) }}"
+                                    class="btn btn-primary">Modify</a></li>
                         </ul>
                         <div class="card-body  overflow-auto" style="height: 300px">
                             <p class="card-text ">{{ $item->description }}.</p>
